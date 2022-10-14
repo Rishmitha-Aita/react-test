@@ -12,3 +12,5 @@ global.sinon = sinon;
 global.mount = mount;
 global.render = render;
 global.shallow = shallow;
+// global.jestExpect = global.expect;
+// global.expect = chai.expect;

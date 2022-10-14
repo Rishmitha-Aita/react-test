@@ -16,6 +16,7 @@ class App extends Component {
     this.state = {
       counter: 0,
       asyncCounters: null,
+      input: '',
     };
 
     this.onIncrement = this.onIncrement.bind(this);
@@ -37,6 +38,12 @@ class App extends Component {
     this.setState(doDecrement);
   }
 
+  inputOnChange(event) {
+    this.setState({
+      input: event.target.value
+    });
+  }
+
   render() {
     const { counter } = this.state;
 
@@ -52,7 +59,15 @@ class App extends Component {
         <button type="button" onClick={this.onDecrement}>
           Decrement
         </button>
+        <div>
+          <input
+            onChange={(event) => {
+              this.inputOnChange(event)
+            }}
+            type="text" />
+        </div>
       </div>
+
     );
   }
 }
